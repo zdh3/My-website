@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: url(images/fox.jpg) no-repeat;
+    background-color: rgb(255, 252, 247);
+    background-size: cover;
+    background-position: center;
+}
+
+body {
+    background: rgba(255, 255, 255, 0.2);
+    font-family: acier-bat-outline,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+header {
+    height: 100vh;
+    min-height: 250px;
+    display: grid;
+    font-size: 100%;
+    grid-template-rows: 1fr max-content auto 1fr;
+    justify-items: center;
+    margin: 0 1rem;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 4em;
+    /* grid-row: 4; */
+    grid-row-start: 2;
+    grid-row-end: auto;
+}
+
+
+nav {
+    grid-row-start: 3;
+    grid-row-end: auto;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    font-family: acier-bat-solid,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+nav li {
+    padding: 0 1.25rem;
+    border-right: 1px solid #000;
+    margin: 1rem 0 .5rem;
+}
+
+nav li:last-child {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+    outline: none;
+}
+
+a:hover {
+    cursor: pointer;
+    color: rgba(191, 191, 191, .6);
+}
+
+/* figure out how to do this with grid */
+@media (max-width: 404px) {
+    nav ul {
+        display: initial;
+    }
+    nav li {
+        border: none;
+        position: relative;
+    }
+    /* original margin causes problems when the vw gets too small */
+    /* try to fix this */
+    header {
+        margin: 0;
+    }
+}
